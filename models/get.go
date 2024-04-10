@@ -9,9 +9,9 @@ func Get(id int64) (todo Todo, err error) {
 	}
 	defer conn.Close()
 
-	row := conn.QueryRow(`select * from todos where id=$1, id`, id)
+	row := conn.QueryRow(`select * from todos where id=$1`, id)
 
-	err = row.Scan(&todo.ID, todo.Title, todo.Description, todo.Done)
+	err = row.Scan(&todo.ID, &todo.Title, &todo.Description, &todo.Done)
 
 	return
 }

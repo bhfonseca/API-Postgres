@@ -9,7 +9,7 @@ func Insert(todo Todo) (id int64, err error) {
 	}
 	defer conn.Close()
 
-	sql := `insert into todos (title, description. done) VALUES ($1, $2, $3) returning id`
+	sql := `insert into todos (title, description, done) VALUES ($1, $2, $3) returning id`
 
 	err = conn.QueryRow(sql, todo.Title, todo.Description, todo.Done).Scan(&id)
 

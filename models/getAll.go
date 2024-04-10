@@ -16,7 +16,7 @@ func GetAll() (todos []Todo, err error) {
 
 	for rows.Next() {
 		var todo Todo
-		rows.Scan(&todo.ID, todo.Title, todo.Description, todo.Done)
+		rows.Scan(&todo.ID, &todo.Title, &todo.Description, &todo.Done)
 		if err != nil {
 			continue
 		}

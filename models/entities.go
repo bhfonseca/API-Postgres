@@ -1,8 +1,8 @@
 package models
 
 type Todo struct {
-	ID          int64  `json:"id,omitempty"`
-	Title       string `json:"title,omitempty"`
-	Description string `json:"description,omitempty"`
+	ID          int64  `json:"id"`
+	Title       string `json:"title"`
+	Description string `json:"description"`
 	Done        bool   `json:"done"`
 }
